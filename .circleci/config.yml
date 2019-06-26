@@ -3,8 +3,8 @@ version: 2.1
 jobs:
   project_dependencies:
     docker:
-      - image: circleci/graalvm-ce:latest
-      - image: circleci/mysql:8.0.16
+      - image: graalvm-ce:latest
+      - image: circleci/mysql:latest
     working_directory: ~/cicd-circleci
     steps:
       - checkout

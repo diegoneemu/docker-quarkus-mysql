@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   project_dependencies:
     docker:
-      - image: graalvm-ce:latest
+      - image: oracle/graalvm-ce:latest
       - image: circleci/mysql:latest
     working_directory: ~/cicd-circleci
     steps:
@@ -15,16 +15,16 @@ jobs:
       - run: ./mvnw compile quarkus:dev
   test:
     docker:
-      - image: circleci/graalvm-ce:latest
+      - image: oracle/graalvm-ce:latest
       - image: circleci/mysql:8.0.16
     working_directory: ~/cicd-circleci
     steps:
       - checkout
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies-{{ checksum "pom.xml" }}
             - v1-dependencies-
-      - run: yarn test
+      - run: ./mvnw test
       - store_artifacts:
           path: /home/circleci/cicd-circleci/__tests__/artifacts/report.html
 

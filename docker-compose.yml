@@ -38,3 +38,7 @@ networks:
   default:
   projects:
     external: true
+
+volumes:
+    maven-repo:
+        external: true

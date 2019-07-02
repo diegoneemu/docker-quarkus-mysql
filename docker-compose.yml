@@ -11,6 +11,7 @@ services:
     volumes:
       - .:/opt/docker-quarkus-mysql
       - /opt/docker-quarkus-mysql
+      - maven-repo:/root/.m2
     links:
       - db
     networks:

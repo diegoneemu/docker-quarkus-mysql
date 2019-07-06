@@ -21,6 +21,8 @@ services:
   db:
     image: mysql:8.0.16
     command: --default-authentication-plugin=mysql_native_password
+    command: --max-connections=1024
+    command: --mysqlx=0
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: kirkdb
@@ -28,7 +30,6 @@ services:
       MYSQL_PASSWORD: kirk-pass
     ports:
       - "3307:3306"
-    command: --max-connections=1024
     networks:
       default:
       projects:

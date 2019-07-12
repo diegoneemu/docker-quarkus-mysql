@@ -8,7 +8,7 @@
 
     <properties>
       <!-- Connection specific -->
-      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+      <!-- <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" /> -->
       <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
 
       <property name="hibernate.show_sql" value="true"/>

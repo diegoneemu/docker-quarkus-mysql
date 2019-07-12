@@ -19,7 +19,6 @@ services:
       - projects
   db:
     image: mysql:8.0.16
-    command: --default-authentication-plugin=mysql_native_password
     command: --max-connections=1024
     volumes:
       - ./mysql/mysqlconf:/etc/mysql/conf.d
@@ -36,12 +35,12 @@ services:
       projects:
         aliases:
           - projects-kirk.mysql
-   
+
 networks:
   default:
   projects:
     external: true
 
 volumes:
-    maven-repo:
-        external: true
+  maven-repo:
+    external: true

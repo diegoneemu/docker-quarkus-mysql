@@ -11,6 +11,8 @@ RUN ./mvnw dependency:go-offline -B
 ENV PORT 8080
 EXPOSE 8080
 
+LABEL Description="kirkdb-container"
+
 #RUN gu install ruby
 #RUN echo 'puts "Hello from Truffleruby!\nVersion: #{RUBY_DESCRIPTION}"' > app.rb
 #CMD ruby app.rb

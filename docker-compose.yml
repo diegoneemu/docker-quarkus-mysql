@@ -2,13 +2,13 @@ version: "3"
 
 services:
   db:
-    image: mysql:8.0.17
-    command: --max-connections=1024
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: kirkdb
-      MYSQL_USER: kirk
-      MYSQL_PASSWORD: kirk
+    # image: mysql:8.0.17
+    # command: --max-connections=1024
+    # environment:
+    #   MYSQL_ROOT_PASSWORD: root
+    #   MYSQL_DATABASE: kirkdb
+    #   MYSQL_USER: kirk
+    #   MYSQL_PASSWORD: kirk
   app:
     build:
       context: ./
@@ -18,5 +18,3 @@ services:
     volumes:
       - .:/opt/docker-quarkus-mysql
       - /opt/docker-quarkus-mysql
-      - "./my.conf:/etc/mysql/conf.d/config-file.cnf"
-      - "./data:/var/lib/mysql:rw"

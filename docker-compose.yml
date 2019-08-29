@@ -1,5 +1,14 @@
 version: "3"
+
 services:
+  # db:
+    # image: mysql:8.0.17
+    # command: --max-connections=1024
+    # environment:
+    #   MYSQL_ROOT_PASSWORD: root
+    #   MYSQL_DATABASE: kirkdb
+    #   MYSQL_USER: kirk
+    #   MYSQL_PASSWORD: kirk
   app:
     build:
       context: ./
